@@ -1,6 +1,6 @@
 #!/usr/bin/env python2.7
 # John Song
-# mark.saad@ymail.com
+# jsong@lucera.com
 # 7July2016
 # A Silly random password generator
 
