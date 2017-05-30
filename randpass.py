@@ -8,10 +8,13 @@ import linecache
 import sys
 from random import randint
 
-nwords = sys.argv[1]
+if len(sys.argv) <= 1:
+	nwords = 3
+else:
+	nwords = int(sys.argv[1], 10)
 words = []
 
-for i in xrange(int(nwords, 10)):
+for i in xrange(nwords):
 	words.append(linecache.getline('common-words.txt', randint(1,1000)).rstrip().title())
 
 line = "".join(words)+str(randint(1000,9999)).rstrip()
