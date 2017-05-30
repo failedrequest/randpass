@@ -5,16 +5,21 @@
 # A Silly random password generator 
 
 import linecache
+import sys
+import argparse
 from random import randint
 
-rnum1 = randint(1,1000)
-word1 = linecache.getline('common-words.txt', rnum1)
-rnum2 = randint(1,1000)
-word2 = linecache.getline('common-words.txt', rnum2)
-rnum3 = randint(1,1000)
-word3 = linecache.getline('common-words.txt', rnum3)
+parser = argparse.ArgumentParser(description='Generate a random password')
+parser.add_argument('-w', metavar='words', type=int, nargs='?', help='number of random words', default=3)
+parser.add_argument('-d', metavar='digits', type=int, nargs='?', help='number of random digits',default=4)
+args = parser.parse_args()
 
-line = word1.rstrip()+word2.rstrip().title()+word3.rstrip().title()+str(randint(1000,9999)).rstrip()
+
+words = []
+for i in xrange(args.w):
+	words.append(linecache.getline('common-words.txt', randint(1,1000)).rstrip().title())
+
+line = "".join(words)+str(randint(10**(args.d-1), 10**args.d-1)).rstrip()
 
 print "Your random password is:", line
 
