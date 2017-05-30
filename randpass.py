@@ -1,5 +1,5 @@
 #!/usr/bin/env python2.7
-# Mark Saad
+# John Song
 # mark.saad@ymail.com
 # 7July2016
 # A Silly random password generator
