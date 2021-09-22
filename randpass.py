@@ -1,7 +1,8 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 # Mark Saad 
-# mark.saad@ymail.com
+# mark.saad@longcount.org
 # 12Dec2018
+# 22Sep2021
 # A Silly random password generator 
 
 import linecache
@@ -13,5 +14,4 @@ def getword():
     return word.strip()
 
 
-print("Your random password is: {}{}{}{}").format(getword(),getword().title(),getword().title(),randint(1000,9999))
-
+print('Your random password is: {}{}{}{}'.format(getword(),getword().title(),getword().title(),randint(1000,9999)))
